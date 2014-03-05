@@ -20,8 +20,13 @@
         <li><a href="<%= your_legislators_path %>">Your Legislators</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Sign In</a></li>
+        <% if current_user %>
+          <li><p class="navbar-text">Signed in as <%= current_user.email %></p></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

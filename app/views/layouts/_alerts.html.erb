@@ -1,0 +1,17 @@
+<div class= "container">
+  <% if notice %>
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Awesome!</strong> <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Oops!</strong> <%= alert %>
+    </div>
+  <% end %>
+</div>
+
+

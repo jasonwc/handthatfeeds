@@ -1,4 +1,6 @@
 Handthatfeeds::Application.routes.draw do
+  devise_for :users
+
   get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index"
   get "legislators/show"

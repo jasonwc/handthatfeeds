@@ -7,6 +7,7 @@ gem 'rails', '3.2.16'
 #gem 'sqlite3'lib
 gem 'bootstrap-sass'
 gem 'cocoon'
+gem 'devise'
 gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'pg'
