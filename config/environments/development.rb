@@ -1,6 +1,6 @@
 Handthatfeeds::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.middleware.use Rack::LiveReload
+  
 
   config.middleware.use(Rack::LiveReload,
   :min_delay        => 500,    # default 1000
