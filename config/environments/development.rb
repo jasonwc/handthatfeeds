@@ -1,5 +1,14 @@
 Handthatfeeds::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.middleware.use Rack::LiveReload
+
+  config.middleware.use(Rack::LiveReload,
+  :min_delay        => 500,    # default 1000
+  :max_delay        => 10_000, # default 60_000
+  :live_reload_port => 56789,  # default 35729
+  :host             => 'handthatfeeds.dev',
+  :ignore           => [ %r{dont/modify\.html$} ]
+  )
 
   config.action_mailer_delivery_method = :letter_opener
 

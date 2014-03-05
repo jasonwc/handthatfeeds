@@ -9,7 +9,6 @@ gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'paperclip'
 gem 'pg'
-gem 'powder'
 gem 'simple_form'
 gem 'congress'
 
@@ -21,6 +20,7 @@ group :development do
   gem "guard-pow"
   gem "letter_opener"
   gem "meta_request"
+  gem 'powder'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem "rack-livereload"
