@@ -1,14 +1,11 @@
 Handthatfeeds::Application.routes.draw do
-  get "legislators/your_legislators"
-
+  get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index"
-
   get "legislators/show"
 
   root to: "static_pages#home"
 
   get "/about", to: "static_pages#about", as: :about
-
   get "/contact", to: "static_pages#contact", as: :contact
 
   # The priority is based upon order of creation:

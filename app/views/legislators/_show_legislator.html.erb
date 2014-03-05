@@ -1,0 +1,29 @@
+<div class='well row'>
+
+  <!-- Picture, Name, Title, Party, State -->
+
+  <div class='col-lg-3'>
+    <img src='http://theunitedstates.io/images/congress/225x275/<%= legislator.bioguide_id %>.jpg'>
+    <h3><%= legislator.title + '. ' + legislator.first_name + ' ' + legislator.last_name %> </h3>
+    <h4><%= legislator.chamber.capitalize + ' | ' + legislator.state_name + ' ' + legislator.party %> </h4>
+  </div>
+
+  <!-- Address, Phone, Facebook, Twitter, Mail, Website -->
+
+  <div class="col-lg-6">
+    <h3><i class='fa fa-building-o'></i><%= ' ' + legislator.office %><br>Washington, D.C. 20510 </h3>
+    <h3><i class='fa fa-phone'></i><%= ' ' + legislator.phone %></h3>
+    <a href='http://facebook.com/<%= legislator.facebook_id %>' target='_blank'><i class="fa fa-facebook-square"></i></a>
+    <a href='http://twitter.com/<%= legislator.twitter_id %>' target='_blank'><i class="fa fa-twitter-square"></i></a>
+    <a href='<%= legislator.contact_form %>' target='_blank'><i class="fa fa-envelope"></i></a>
+    <a href='<%= legislator.website %>' target='_blank'><i class="fa fa-globe"></i></a>
+  </div>
+
+  <!-- Mouth, Money -->
+
+  <div class="col-lg-3">
+    <h1><a href='#'><i class='fa fa-bullhorn'> Mouth</i></a></h1>
+    <h1><a href='#'><i class='fa fa-money'> Money</i></a></h1>
+  </div>
+
+</div>

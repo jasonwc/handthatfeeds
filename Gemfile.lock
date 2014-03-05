@@ -83,6 +83,8 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.9.3)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     geocoder (1.1.9)
     guard (2.5.1)
@@ -223,6 +225,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 3.2.1)
   congress
+  font-awesome-rails
   guard
   guard-livereload
   guard-pow

@@ -1,2 +1,6 @@
-<h1>Legislators#your_legislators</h1>
-<p>Find me in app/views/legislators/your_legislators.html.erb</p>
+<h1>Your Legislators</h1>
+<h2>Senators</h2>
+<%= render '/legislators/show_legislator', legislator: @senior_senator %>
+<%= render '/legislators/show_legislator', legislator: @junior_senator%>
+<h2>Representative</h2>
+<%= render '/legislators/show_legislator', legislator: @representative %>
