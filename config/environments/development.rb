@@ -5,13 +5,13 @@ Handthatfeeds::Application.configure do
   config.middleware.use(Rack::LiveReload,
   :min_delay        => 500,    # default 1000
   :max_delay        => 10_000, # default 60_000
-  :live_reload_port => 56789,  # default 35729
+  :live_reload_port => 35729,  # default 35729
   :host             => 'handthatfeeds.dev',
   :ignore           => [ %r{dont/modify\.html$} ]
   )
 
   config.action_mailer_delivery_method = :letter_opener
-  config.action_mailer.default_url_options = { :host => 'handthatfeeds.dev' }
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
