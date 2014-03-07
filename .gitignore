@@ -15,3 +15,7 @@
 /tmp
 
 .DS_Store
+
+# Ignore database to avoid remote conflicts
+/config/database.yml
+.gitignore
