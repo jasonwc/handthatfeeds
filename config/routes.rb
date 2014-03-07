@@ -3,7 +3,7 @@ Handthatfeeds::Application.routes.draw do
 
   get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index"
-  get "legislators/show"
+  get "legislators/show/:crp_id", to: "legislators#show", as: :legislator
 
   root to: "static_pages#home"
   get "/about", to: "static_pages#about", as: :about
