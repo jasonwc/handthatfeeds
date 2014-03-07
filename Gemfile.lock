@@ -236,7 +236,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass (>= 3.0.0.0)
+  bootstrap-sass
   cocoon
   coffee-rails (~> 3.2.1)
   congress
