@@ -10,7 +10,7 @@ class ContactController < ApplicationController
     respond_to do |format|
       if @contact.valid?
         ContactMailer.submission(@contact).deliver
-        format.html { redirect_to root_path, notice: 'Email was successfully created.' }
+        format.html { redirect_to contact_path, notice: 'Email was successfully created.' }
       else
         format.html { render action: "new", alert: "There was a problem." }
       end
