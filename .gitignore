@@ -19,3 +19,6 @@
 # Ignore database to avoid remote conflicts
 /config/database.yml
 .gitignore
+.ruby-version
+.ruby-gemset
+.powenv
