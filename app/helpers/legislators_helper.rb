@@ -1,2 +1,2 @@
-module LegislatorsHelper
+module LegislatorsHelper   
 end
