@@ -13,6 +13,9 @@ gem 'paperclip'
 gem 'pg'
 gem 'simple_form'
 gem 'congress'
+gem 'opensecrets'
+gem 'httparty'
+gem 'hashie'
 
 group :development do
   gem "better_errors"

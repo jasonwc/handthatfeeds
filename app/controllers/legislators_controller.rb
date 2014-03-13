@@ -16,6 +16,8 @@ class LegislatorsController < ApplicationController
 
   def show
     @crp_id = params[:crp_id]
-    raise "  "
+    result = HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json')
+    industry = result.body
+    raise ' '
   end
 end
