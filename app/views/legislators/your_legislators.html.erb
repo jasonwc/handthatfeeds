@@ -1,4 +1,16 @@
-<h1>Your Legislators</h1>
+<h1>Your Legislators
+  <div class="pull-right">
+    <small>
+      <%= form_tag("/your_legislators", :method => "get") do %>
+        <%= label_tag(:search, "Search by zip code:") %>
+        <%= text_field_tag(:search) %>
+        <button type="submit" class="btn btn-primary">
+          <i class="glyphicon glyphicon-search"></i> Find
+        </button>
+      <% end %>    
+    </small>
+  </div>
+</h1>
 <h2>Senators</h2>
 <%= render '/legislators/show_legislator', legislator: @senior_senator %>
 <%= render '/legislators/show_legislator', legislator: @junior_senator%>
