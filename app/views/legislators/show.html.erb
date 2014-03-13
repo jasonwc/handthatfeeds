@@ -1,2 +1,6 @@
 <h1>Legislators#show</h1>
 <p>Find me in app/views/legislators/show.html.erb</p>
+
+<% @industries.each do |individual_industry| %>
+  <%= render '/legislators/show_industry', industry: individual_industry %>
+<% end %>   

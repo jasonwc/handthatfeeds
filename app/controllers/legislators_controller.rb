@@ -22,8 +22,14 @@ class LegislatorsController < ApplicationController
 
   def show
     @crp_id = params[:crp_id]
-    result = HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json')
-    industry = result.body
-    raise ' '
+    result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
+    @industries = result['response']['industries']['industry']
+    # industries.each do |industry|
+    #   puts industry['industry_name']
+    #   puts industry['indivs']
+    #   puts industry['pacs']
+    #   puts industry['total']
+    # end
+    # raise ' '
   end
 end
