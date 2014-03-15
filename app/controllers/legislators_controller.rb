@@ -38,6 +38,18 @@ data_table = GoogleVisualr::DataTable.new
     # Get's top organizations contributing to a specified politician
     organization_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candContrib&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
     @organizations = organization_result['response']['contributors']['contributor']
-    
+
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('string', 'Organizations')
+    data_table.new_column('number', 'Amount')
+    data_table.add_rows(@organizations.count)
+    @organizations.each_with_index do |org, index|
+      data_table.set_cell(index, 0, org['@attributes']['org_name']    )
+      data_table.set_cell(index, 1, org['@attributes']['total'].to_i    )
+    end
+    opts   = { :width => 800, :height => 480, :title => 'Contributions by Organization', :is3D => false }
+    @chart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
+
+
   end
 end
