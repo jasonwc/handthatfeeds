@@ -3,11 +3,9 @@
     <small>
       <%= form_tag("/your_legislators", :method => "get") do %>
       
-        <%= label_tag(:search, "Search by zip code:") %>
-        <%= text_field_tag(:search) %>
-        <button type="submit" class="btn btn-primary">
-          <i class="glyphicon glyphicon-search"></i> Find
-        </button>
+        <%= label_tag(:search, "Find your your legislators:") %>
+        <%= text_field_tag(:search, "Zip Code", :onclick => 'if($(this).val()=="Zip Code"){$(this).val("");};') %>
+        <small><button type="submit" class="btn-main"><i class="glyphicon glyphicon-search"></i></button></small>
       <% end %>    
     </small>
   </div>
