@@ -30,6 +30,21 @@ data_table = GoogleVisualr::DataTable.new
     #      currently assumes that you want data from 2014, maybe want to make that variable?
     industry_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
     @industries = industry_result['response']['industries']['industry']
+    data_desk = GoogleVisualr::DataTable.new
+    data_desk.new_column('string', 'Industry')
+    data_desk.new_column('number', 'Individual')
+    data_desk.new_column('number', 'Pacs')
+    data_desk.new_column('number', 'Total')
+    data_desk.add_rows(@industries.count)
+    @industries.each_with_index do |industry, index|
+      data_desk.set_cell(index, 0, industry['@attributes']['industry_name'])
+      data_desk.set_cell(index, 1, industry['@attributes']['indivs'].to_i)
+      data_desk.set_cell(index, 2, industry['@attributes']['pacs'].to_i)
+      data_desk.set_cell(index, 3, industry['@attributes']['total'].to_i)
+    end
+  
+    opts   = { :width => 800, :height => 480, :title => 'Contibutions by Industry', :hAxis => { :title => 'Industry', :titleTextStyle => {:color => 'red'}} }
+    @hart = GoogleVisualr::Interactive::ColumnChart.new(data_desk, opts)
 
     # Get's top sectors that donated to a candidate
     # sector_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candSector&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))

@@ -3,6 +3,10 @@
 <div class='row'>
   <div class='col-lg-6'>
     <h1> Top Industries: </h1>
+
+     <div id='hart'></div>
+    <%= render_chart(@hart, 'hart') %>
+
     <% @industries.each do |individual_industry| %>
      <%= render '/legislators/show_industry', industry: individual_industry %>
     <% end %>
@@ -10,7 +14,7 @@
 
   <div class='col-lg-6'>
     <h1> Top Organizations: </h1>
-    
+
     <div id='chart'></div>
     <%= render_chart(@chart, 'chart') %>
 
