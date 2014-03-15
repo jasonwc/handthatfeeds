@@ -1,4 +1,5 @@
 class LegislatorsController < ApplicationController
+data_table = GoogleVisualr::DataTable.new
 
   def your_legislators
     # quick and dirty validation for zipcode validation (need to replace with real validation)
@@ -30,6 +31,6 @@ class LegislatorsController < ApplicationController
     #   puts industry['pacs']
     #   puts industry['total']
     # end
-    # raise ' '
+    raise ' '
   end
 end
