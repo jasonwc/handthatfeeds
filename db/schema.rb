@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20140315184409) do
   add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
 
-
   create_table "legislators", :force => true do |t|
     t.string   "title"
     t.string   "bioguide_id"
@@ -53,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20140315184409) do
     t.datetime "updated_at",                   :null => false
     t.string   "crp_id"
   end
-
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

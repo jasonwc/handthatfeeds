@@ -49,6 +49,7 @@ data_table = GoogleVisualr::DataTable.new
   def show
     # Sets @crp_id to get crp_id of current legislator
     @crp_id = params[:crp_id]
+    @legislator = Legislator.find_by_crp_id(@crp_id)
 
     # Get's top industries that donated to a candidate
     #TODO: put API key into secret file
