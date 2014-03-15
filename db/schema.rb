@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140305093531) do
+ActiveRecord::Schema.define(:version => 20140315171505) do
+
+  create_table "legislators", :force => true do |t|
+    t.string   "title"
+    t.string   "bioguide_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "chamber"
+    t.string   "state_name"
+    t.string   "party"
+    t.string   "office"
+    t.string   "phone"
+    t.string   "facebook_id"
+    t.string   "twitter_id"
+    t.string   "contact_form"
+    t.string   "website"
+    t.string   "profile_picture_file_name"
+    t.string   "profile_picture_content_type"
+    t.integer  "profile_picture_file_size"
+    t.datetime "profile_picture_updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "crp_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
