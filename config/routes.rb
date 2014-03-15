@@ -5,14 +5,12 @@ Handthatfeeds::Application.routes.draw do
 
   root to: "static_pages#home"
 
-<<<<<<< HEAD
+
   get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index", to: "legislators#index", as: :legislators
   get "legislators/show/:crp_id", to: "legislators#show", as: :legislator
-
-=======
   get "/about", to: "static_pages#about", as: :about
->>>>>>> publicactivity
+
   get "/contact", to: "contact#new", as: :contact
   post "/contact", to: "contact#create", as: :contact
 
