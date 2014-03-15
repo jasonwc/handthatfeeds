@@ -1,3 +1,4 @@
+<div class="container">
 <%= simple_form_for(@contact, url: contact_path(@contact)) do |f| %>
   <%= f.error_notification %>
   <%= f.input :name %>
@@ -6,3 +7,4 @@
   <%= f.input :body, as: :text, input_html: { rows: 5 } %>
   <%= f.button :submit, "Send Email", class: "btn btn-primary btn-lg" %>
 <% end %>
+</div>

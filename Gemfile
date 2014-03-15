@@ -16,7 +16,11 @@ gem 'congress'
 gem 'opensecrets'
 gem 'httparty'
 gem 'hashie'
+
 gem "google_visualr", "~> 2.1.0"
+
+gem 'omniauth-facebook'
+
 
 group :development do
   gem "better_errors"

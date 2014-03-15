@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cocoon
+//= require jquery.bxslider.min
 //= require bootstrap
+//= require bootstrap-portfilter
+//= require modernizr-2.6.2-respond-1.1.0.min
+//= require main
 //= require_tree .
