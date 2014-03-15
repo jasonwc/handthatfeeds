@@ -62,7 +62,7 @@ data_table = GoogleVisualr::DataTable.new
       data_table.set_cell(index, 0, org['@attributes']['org_name']    )
       data_table.set_cell(index, 1, org['@attributes']['total'].to_i    )
     end
-    opts   = { :width => 800, :height => 480, :title => 'Contributions by Organization', :is3D => false }
+    opts   = { :width => 800, :height => 480, :title => 'Contributions by Organization', :is3D => false, pieHole: 0.3 }
     @chart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
 
 
