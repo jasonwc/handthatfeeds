@@ -1,15 +1,22 @@
 Handthatfeeds::Application.routes.draw do
+  resources :users, only: [:index, :show], path: :user 
+
   devise_for :users
 
   root to: "static_pages#home"
-  get "/about", to: "static_pages#about", as: :about
 
+<<<<<<< HEAD
   get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index", to: "legislators#index", as: :legislators
   get "legislators/show/:crp_id", to: "legislators#show", as: :legislator
 
+=======
+  get "/about", to: "static_pages#about", as: :about
+>>>>>>> publicactivity
   get "/contact", to: "contact#new", as: :contact
   post "/contact", to: "contact#create", as: :contact
+
+  resources :activities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
