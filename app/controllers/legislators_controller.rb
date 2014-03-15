@@ -21,15 +21,22 @@ class LegislatorsController < ApplicationController
   end
 
   def show
+    # Sets @crp_id to get crp_id of current legislator
     @crp_id = params[:crp_id]
-    result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
-    @industries = result['response']['industries']['industry']
-    # industries.each do |industry|
-    #   puts industry['industry_name']
-    #   puts industry['indivs']
-    #   puts industry['pacs']
-    #   puts industry['total']
-    # end
-    # raise ' '
+
+    # Get's top industries that donated to a candidate
+    #TODO: put API key into secret file
+    #      currently assumes that you want data from 2014, maybe want to make that variable?
+    industry_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candIndustry&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
+    @industries = industry_result['response']['industries']['industry']
+
+    # Get's top sectors that donated to a candidate
+    # sector_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candSector&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
+    # @sectors = sector_result['response']['sectors']['sector']
+
+    # Get's top organizations contributing to a specified politician
+    organization_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candContrib&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
+    @organizations = organization_result['response']['contributors']['contributor']
+    
   end
 end
