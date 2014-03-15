@@ -18,6 +18,29 @@ class LegislatorsController < ApplicationController
   end
 
   def index
+    @legislators = Legislator.all
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @legislators }
+    end
+  end
+
+  def new
+    @legislator = Legislator.new
+  end
+
+  def edit
+    @legislator = Legislator.find(params[:id])
+  end
+
+  def create
+    @legislator = Legislator.new(params[:legislator])
+  end
+
+  def destroy
+    @legislator = Legislator.find(params[:id])
+    @legislator.destroy
   end
 
   def show
