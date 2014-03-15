@@ -1,25 +1,19 @@
 <h1>Money</h1>
-<p>Find me in app/views/legislators/show.html.erb</p>
+
 <div class='row'>
   <div class='col-lg-6'>
-    <h1> Top Industries: </h1>
 
-     <div id='hart'></div>
+    <div id='hart'></div>
     <%= render_chart(@hart, 'hart') %>
 
-    <% @industries.each do |individual_industry| %>
-     <%= render '/legislators/show_industry', industry: individual_industry %>
-    <% end %>
-  </div> 
 
+  </div> 
+</div>
+<div class="row">
   <div class='col-lg-6'>
-    <h1> Top Organizations: </h1>
 
     <div id='chart'></div>
     <%= render_chart(@chart, 'chart') %>
 
-    <% @organizations.each do |individual_organization| %>
-     <%= render '/legislators/show_organization', organization: individual_organization %>
-    <% end %>
   </div>     
 </div>
