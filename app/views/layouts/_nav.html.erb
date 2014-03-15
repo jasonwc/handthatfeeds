@@ -1,33 +1,33 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">HandThatFeeds</a>
+      <a class="navbar-brand" href="/"><%= image_tag("htflogo.png") %></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="<%= about_path %>">About</a></li>
-        <li><a href="<%= contact_path%>">Contact Us</a></li>
-        <li><a href="<%= your_legislators_path %>">Your Legislators</a></li>
-      </ul>
+    <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<%= about_path %>">About</a></li>
+            <li><a href="<%= contact_path%>">Contact Us</a></li>
+            <li><a href="#">Blog </a></li>
+            <li><a href="<%= your_legislators_path %>">Your Legislators</a></li>
+          </ul>
+          <% if current_user %>
           <li><p class="navbar-text">Signed in as <%= current_user.email %></p></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% else %>
+          <li class="sign-up"><li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+          <% end %>
+        </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+
