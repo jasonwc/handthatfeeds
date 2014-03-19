@@ -1,4 +1,7 @@
 <h1>Your Legislators
+
+  
+
   <div class="pull-right">
     <small>
       <%= form_tag("/your_legislators", :method => "get") do %>
@@ -10,6 +13,11 @@
     </small>
   </div>
 </h1>
+<% if current_user %>
+  <% current_user.legislators.each do |legislator| %>
+    <%= render '/legislators/show_legislator', legislator: legislator %>
+  <% end %>
+<% end %>
 <h2>Senators</h2>
 <%= render '/legislators/show_legislator', legislator: @senior_senator %>
 <%= render '/legislators/show_legislator', legislator: @junior_senator%>

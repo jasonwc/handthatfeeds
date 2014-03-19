@@ -10,6 +10,9 @@
   <%= @user.email %>
 </p>
 
+<% @user.legislators.each do |legislator| %>
+  <p><%= legislator.title + ' ' + legislator.first_name + ' ' + legislator.last_name %></p>
+<% end %>
 
 
 
