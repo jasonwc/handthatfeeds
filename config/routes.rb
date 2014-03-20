@@ -1,10 +1,12 @@
 Handthatfeeds::Application.routes.draw do
   resources :users, only: [:index, :show], path: :user 
+  #resources :users
 
   devise_for :users
 
   root to: "static_pages#home"
 
+  get "users/index", to: "users#index", as: :users
 
   get "/your_legislators", to: "legislators#your_legislators", as: :your_legislators
   get "legislators/index", to: "legislators#index", as: :legislators

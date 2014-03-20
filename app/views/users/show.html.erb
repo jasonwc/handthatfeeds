@@ -2,15 +2,16 @@
 
 <p>
   <b>Username:</b>
-  <%= @user.username %>
+  <%= @users.username %>
 </p>
 
 <p>
   <b>Email:</b>
-  <%= @user.email %>
+  <%= @users.email %>
 </p>
 
-
+<%= link_to 'Edit', edit_user_registration_path(@user) %> |
+<%= link_to 'Back', users_path %>
 
 
 

@@ -1,4 +1,8 @@
+$well-bg: #ffffff;
+$well-border: #8bbf36;
+
  @import "bootstrap";
+
 
  h1, h2, h3, h4, h5, h6, p {
   font-family: 'Open Sans', sans-serif;
@@ -44,6 +48,18 @@ a {
 
 body {
   padding-top: 100px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.default-row-spacer{
+    margin-bottom:20px;
+}
+
+.well {
+  margin-top: 20px;
 }
 
 
@@ -236,7 +252,7 @@ iframe {
 }
 
 .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-  background-color: transparent;
+  background-color: #000000;
 }
 
 .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
@@ -248,7 +264,7 @@ iframe {
 
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #8bbf36;
 }
 
 .navbar-nav > li > .dropdown-menu {
@@ -307,10 +323,11 @@ iframe {
 
 .navbar-inverse .navbar-toggle {
     border-color: rgba(0, 0, 0, 0);
+    background-color: #8bbf36;
 }
 
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #2b3033;
 }
 
 
@@ -642,13 +659,14 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 }
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 10px ;
     color: #555555;
     display: inline-block;
     font-size: 14px;
     height: 40px;
     line-height: 20px;
     margin-bottom: 10px;
+    margin-top: 10px;
     padding: 4px 6px;
     vertical-align: middle;
 }
