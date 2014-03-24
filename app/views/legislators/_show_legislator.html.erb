@@ -11,12 +11,18 @@
   <!-- Address, Phone, Facebook, Twitter, Mail, Website -->
 
   <div class="col-sm-4 col-lg-6">
-    <h3><i class='fa fa-building-o'></i><%= ' ' + legislator.office %><br>Washington, D.C. 20510 </h3>
-    <h3><i class='fa fa-phone'></i><%= ' ' + legislator.phone %></h3>
-    <a href='http://facebook.com/<%= legislator.facebook_id %>' target='_blank'><i class="fa fa-facebook-square"></i></a>
-    <a href='http://twitter.com/<%= legislator.twitter_id %>' target='_blank'><i class="fa fa-twitter-square"></i></a>
-    <a href='<%= legislator.contact_form %>' target='_blank'><i class="fa fa-envelope"></i></a>
-    <a href='<%= legislator.website %>' target='_blank'><i class="fa fa-globe"></i></a>
+    <div class='row address'>
+      <h3><i class='fa fa-building-o'></i><%= ' ' + legislator.office %><br>Washington, D.C. 20510 </h3>
+    </div>
+    <div class='row phone'>
+      <h3><i class='fa fa-phone'></i><%= ' ' + legislator.phone %></h3>
+    </div>
+    <div class='row social'>
+      <a href='http://facebook.com/<%= legislator.facebook_id %>' target='_blank'><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href='http://twitter.com/<%= legislator.twitter_id %>' target='_blank'><i class="fa fa-twitter-square fa-3x"></i></a>
+      <a href='<%= legislator.contact_form %>' target='_blank'><i class="fa fa-envelope fa-3x"></i></a>
+      <a href='<%= legislator.website %>' target='_blank'><i class="fa fa-globe fa-3x"></i></a>
+    </div>
   </div>
 
   <!-- Mouth, Money -->
