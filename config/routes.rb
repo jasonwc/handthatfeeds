@@ -15,6 +15,7 @@ Handthatfeeds::Application.routes.draw do
   post "/contact", to: "contact#create", as: :contact
 
   resources :activities
+  resources :relationships
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
