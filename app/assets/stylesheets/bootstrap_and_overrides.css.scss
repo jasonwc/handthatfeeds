@@ -1,7 +1,11 @@
 $well-bg: #ffffff;
 $well-border: #8bbf36;
 
+
+
  @import "bootstrap";
+
+
 
 
  h1, h2, h3, h4, h5, h6, p {
@@ -233,6 +237,11 @@ iframe {
 
 .navbar-brand {
   margin-top: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    color: #8bbf36 !important;
 }
 
 .navbar-inverse .btn-navbar {
