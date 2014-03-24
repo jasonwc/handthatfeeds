@@ -6,7 +6,6 @@
     <img src='http://theunitedstates.io/images/congress/225x275/<%= legislator.bioguide_id %>.jpg'>
     <h3><%= legislator.title + '. ' + legislator.first_name + ' ' + legislator.last_name %> </h3>
     <h4><%= legislator.chamber.capitalize + ' | ' + legislator.state_name + ' ' + legislator.party %> </h4>
-    <p><%= legislator.crp_id %></p>
   </div>
 
   <!-- Address, Phone, Facebook, Twitter, Mail, Website -->
@@ -23,7 +22,7 @@
   <!-- Mouth, Money -->
 
   <div class="col-sm-4 col-lg-3">
-    <h1><a href='#'><i class='fa fa-bullhorn'> Mouth</i></a></h1>
+    <!-- <h1><a href='#'><i class='fa fa-bullhorn'> Mouth</i></a></h1> -->
     <h1><a href='<%= legislator_path(legislator.crp_id) %>'><i class='fa fa-money'> Money</i></a></h1>
   </div>
 
