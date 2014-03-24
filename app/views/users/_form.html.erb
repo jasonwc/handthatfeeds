@@ -1,0 +1,14 @@
+<%= simple_form_for(@user) do |f| %>
+    <%= f.error_notification%>
+    <%= f.input :email %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <% if controller.action_name == 'new' or controller.action_name == 'create'%>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <% end %>
+    <%= f.input :avatar %>
+    <%= f.button :submit %>
+<% end %>
+
+

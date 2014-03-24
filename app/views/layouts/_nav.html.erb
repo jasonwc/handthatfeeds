@@ -12,17 +12,15 @@
     <div class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stuff <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="<%= about_path %>">About</a></li>
-            <li><a href="<%= contact_path%>">Contact Us</a></li>
-            <li><a href="<%= legislators_path %>">All Legislators</a></li>
-            <li><a href="<%= your_legislators_path %>">Your Legislators</a></li>
-          </ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to "All Legislators", legislators_path %></li>
+        <li><%= link_to "Your Legislators", your_legislators_path  %></li>
           <% if current_user %>
-          <li><p class="navbar-text">Signed in as <%= current_user.email %></p></li>
+          <li>
+            <%= link_to current_user.username, edit_user_registration_path%>
+            <%#= raise " " %>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% else %>
           <li class="sign-up"><li><%= link_to 'Sign Up', new_user_registration_path %></li>
