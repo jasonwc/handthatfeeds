@@ -22,7 +22,7 @@ data_table = GoogleVisualr::DataTable.new
 
   def index
     @search = Legislator.search(params[:q])
-    @legislators = @search.result
+    @legislators = @search.result.page(params[:page]).per(5)
     
 
       respond_to do |format|
