@@ -1,0 +1,16 @@
+doctype html
+html lang="en" 
+  head
+    script src="http://www.google.com/jsapi" 
+    meta charset="utf-8" 
+      meta content="IE=edge" http-equiv="X-UA-Compatible" 
+        meta content="width=device-width, initial-scale=1" name="viewport" 
+          title HandThatFeeds
+          = stylesheet_link_tag    "application", :media => "all"
+          = javascript_include_tag "application"
+          = csrf_meta_tags
+  <body id= #{"#{params[:controller]}_#{params[:action]}"}>
+    =render '/layouts/nav'
+    =render '/layouts/alerts'
+    .container
+      = yield

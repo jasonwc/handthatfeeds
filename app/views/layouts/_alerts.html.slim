@@ -1,0 +1,14 @@
+.container
+  - if notice
+    .alert.alert-success.alert-dismissable
+      button.close aria-hidden="true" data-dismiss="alert" type="button"  &times;
+      strong Awesome!
+      = notice
+  - if alert
+    .alert.alert-warning.alert-dismissable
+      button.close aria-hidden="true" data-dismiss="alert" type="button"  &times;
+      strong Oops!
+      = alert
+
+
+

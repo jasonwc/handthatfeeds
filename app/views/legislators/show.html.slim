@@ -1,0 +1,19 @@
+.container.charts
+  = render '/legislators/show_legislator', legislator: @legislator
+  h1 Money
+  .row.money
+    h1 Top Industries:
+  .row
+    .col-lg-6
+      / - @industries.each do |individual_industry|
+      /   = render '/legislators/show_industry', industry: individual_industry
+    #hart
+      = render_chart(@hart, 'hart')
+  .row.money
+    h1 Top Organizations:
+  .row
+    .col-lg-6
+      / - @organizations.each do |individual_organization|
+      /   = render '/legislators/show_organization', organization: individual_organization
+      #chart
+        = render_chart(@chart, 'chart')
