@@ -20,9 +20,8 @@ gem 'google_visualr', '~> 2.1.0'
 gem 'omniauth-facebook'
 gem 'slim'
 gem 'thin'
-gem "google_visualr", "~> 2.1.0"
-gem 'omniauth-facebook'
 gem 'rolify'
+gem 'ransack'
 
 group :production do
   gem 'rails_12factor'

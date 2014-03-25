@@ -177,6 +177,8 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.4)
     powder (0.2.1)
       thor (>= 0.11.5)
@@ -226,6 +228,10 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.1.1)
+    ransack (1.1.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     rash (0.4.0)
       hashie (~> 2.0.0)
     rb-fsevent (0.9.4)
@@ -311,6 +317,7 @@ DEPENDENCIES
   rack-livereload
   rails (= 3.2.16)
   rails_12factor
+  ransack
   rolify
   sass-rails (~> 3.2.3)
   simple_form

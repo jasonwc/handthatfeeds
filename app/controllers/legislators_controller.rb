@@ -21,7 +21,9 @@ data_table = GoogleVisualr::DataTable.new
   end
 
   def index
-    @legislators = Legislator.all
+    @search = Legislator.search(params[:q])
+    @legislators = @search.result
+    
 
       respond_to do |format|
         format.html # index.html.erb

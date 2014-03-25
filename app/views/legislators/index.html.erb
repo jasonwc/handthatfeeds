@@ -7,6 +7,22 @@
 <#% end %>    
  -->
 
+ <%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :state_name_cont, "Search by State:" %>
+    <%= f.text_field :state_name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name_cont, "First Name:" %>
+    <%= f.text_field :first_name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name_cont, "Last Name:" %>
+    <%= f.text_field :last_name_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
 <% @legislators.each do |legislator| %>
     <pre><em><%= legislator.first_name %> <%= legislator.last_name %> <%= legislator.title %> <%= legislator.party %> <%= legislator.state_name %></em>
     Bioguide id:  <%= legislator.bioguide_id %>
