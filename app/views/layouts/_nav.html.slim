@@ -1,0 +1,23 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="/" = image_tag("htflogo.png")
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li= link_to "Home", root_path
+        li= link_to "About", about_path
+        li= link_to "Contact Us", contact_path
+        li= link_to "All Legislators", legislators_path
+        li= link_to "Your Legislators", your_legislators_path
+        - if current_user
+          li
+            = link_to current_user.username, edit_user_registration_path
+          li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+        - else
+          li.sign-up
+            li= link_to 'Sign Up', new_user_registration_path
+            li= link_to 'Sign In', new_user_session_path

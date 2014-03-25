@@ -1,0 +1,16 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    .well
+      h2.text-center Sign In
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        .form-inputs
+          = f.input :email, :required => false, :autofocus => true
+          = f.input :password, :required => false
+          = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+        .form-actions
+          = f.button :submit, "Sign in"
+        = render "devise/shared/links"
+
+
+
+

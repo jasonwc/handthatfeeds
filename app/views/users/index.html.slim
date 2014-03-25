@@ -1,0 +1,19 @@
+table
+  tr
+    th Email
+    th First name
+    th Last name
+    th
+    th
+    th
+  - @users.each do |user|
+    tr
+      td= user.id
+      td= user.username
+      td= user.email
+      td= user.first_name
+      td= user.last_name
+      td/
+    td= link_to 'Edit', edit_user_registration_path(user)
+    td/
+br/

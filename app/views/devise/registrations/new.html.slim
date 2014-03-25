@@ -1,0 +1,16 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    .well
+      h2.text-center Sign Up
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :username, :required => true, :autofocus => true
+          = f.input :email, :required => true
+          = f.input :password, :required => true
+          = f.input :password_confirmation, :required => true
+        .form-actions
+          = f.button :submit, "Sign up"
+        = render "devise/shared/links"
+
+      
