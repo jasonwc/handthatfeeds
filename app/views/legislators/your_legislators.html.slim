@@ -2,7 +2,7 @@ h1 Your Legislators
 .pull-right
   small
     = form_tag("/your_legislators", :method => "get") do
-      = label_tag(:search, "Find your your legislators:")
+      = label_tag(:search, "Find your legislators:")
       = text_field_tag(:search, "Zip Code", :onclick => 'if($(this).val()=="Zip Code"){$(this).val("");};')
       small
         button.btn-main type="submit" 
