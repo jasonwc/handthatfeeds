@@ -6,40 +6,16 @@
   </button>
 <#% end %>    
  -->
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Title</th>
-    <th>Party</th>
-    <th>State</th>
-    <th>Chamber</th>
-    <th>Bioguide id</th>
-    <th>Crp id</th>
-    <th>Office</th>
-    <th>Phone</th>
-    <th>Facebook id</th>
-    <th>Twitter id</th>
-    <th>Contact form</th>
-    <th>Website</th>
-  </tr>
 
 <% @legislators.each do |legislator| %>
-  <tr>
-    <td><%= legislator.first_name %></td>
-    <td><%= legislator.last_name %></td>
-    <td><%= legislator.title %></td>
-    <td><%= legislator.party %></td>
-    <td><%= legislator.state_name %></td>
-    <td><%= legislator.chamber %></td>
-    <td><%= legislator.bioguide_id %></td>
-    <td><%= legislator.crp_id %></td>
-    <td><%= legislator.office %></td>
-    <td><%= legislator.phone %></td>
-    <td><%= legislator.facebook_id %></td>
-    <td><%= legislator.twitter_id %></td>
-    <td><%= legislator.contact_form %></td>
-    <td><%= legislator.website %></td>    
-  </tr>
+    <pre><em><%= legislator.first_name %> <%= legislator.last_name %> <%= legislator.title %> <%= legislator.party %> <%= legislator.state_name %></em>
+    Bioguide id:  <%= legislator.bioguide_id %>
+    Crp id:       <%= legislator.crp_id %>
+    Office:       <%= legislator.office %>
+    Phone:        <%= legislator.phone %>
+    Facebook id:  <%= legislator.facebook_id %>
+    Twitter id:   <%= legislator.twitter_id %>
+    Contact form: <%= legislator.contact_form %>
+    Website:      <%= legislator.website %></pre>
+    <br>
 <% end %>
-</table>

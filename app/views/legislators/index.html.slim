@@ -1,0 +1,23 @@
+h1 Legislators Index
+/ = form_tag("/index", :method => "index") do
+/   button.btn.btn-primary type="submit" 
+/     i.glyphicon.glyphicon-search
+/     | Update Legislators
+    
+- @legislators.each do |legislator|
+  pre
+    em
+      = legislator.first_name
+      = legislator.last_name
+      = legislator.title
+      = legislator.party
+      = legislator.state_name
+    | Bioguide id:  #{legislator.bioguide_id}
+    | Crp id:       #{legislator.crp_id}
+    | Office:       #{legislator.office}
+    | Phone:        #{legislator.phone}
+    | Facebook id:  #{legislator.facebook_id}
+    | Twitter id:   #{legislator.twitter_id}
+    | Contact form: #{legislator.contact_form}
+    | Website:      #{legislator.website}
+  br

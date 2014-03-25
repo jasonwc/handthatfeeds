@@ -16,26 +16,31 @@ gem 'congress'
 gem 'opensecrets'
 gem 'httparty'
 gem 'hashie'
+gem 'google_visualr', '~> 2.1.0'
+gem 'omniauth-facebook'
+gem 'slim'
+gem 'thin'
 gem "google_visualr", "~> 2.1.0"
 gem 'omniauth-facebook'
+gem 'rolify'
 
 group :production do
   gem 'rails_12factor'
 end
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "guard"
-  gem "guard-livereload"
-  gem "guard-pow"
-  gem "letter_opener"
-  gem "meta_request"
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-pow'
+  gem 'letter_opener'
+  gem 'meta_request'
   gem 'powder'
   gem 'pry-rails'
   gem 'pry-debugger'
-  gem "rack-livereload"
-  gem "xray-rails"  
+  gem 'rack-livereload'
+  gem 'xray-rails'  
 end
 # Gems used only for assets and not required
 # in production environments by default.
