@@ -20,9 +20,12 @@
         <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
         <%= f.input :password_confirmation, :required => false %>
         <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-        <% if current_user.lunicorn? %>
+
+        <!-- remove this if-statement and assign admins via console -->
+        <% if current_user.is_admin? %>
           <%= f.input :lunicorn %>
         <% end %>
+      
       </div>
 
       <div class="form-actions">
