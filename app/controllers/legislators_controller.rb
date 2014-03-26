@@ -71,7 +71,7 @@ data_table = GoogleVisualr::DataTable.new
       data_desk.set_cell(index, 3, industry['@attributes']['total'].to_i)
     end
   
-    opts   = { :width => 800, :height => 480, :title => 'Contibutions by Industry', :hAxis => { :title => 'Industry', :titleTextStyle => {:color => 'red'}} }
+    opts   = { :width => 800, :height => 480, :title => 'Contibutions by Industry', colors: ['#8bbf36', '#5D7F24', '#2E4012'], :hAxis => { :title => 'Industry'} }
     @hart = GoogleVisualr::Interactive::ColumnChart.new(data_desk, opts)
 
     # Get's top sectors that donated to a candidate
