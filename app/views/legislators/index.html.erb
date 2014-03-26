@@ -1,29 +1,23 @@
 <h1>Legislators Index</h1>
 
-<!-- <#%= form_tag("/index", :method => "index") do %>
-  <button type="submit" class="btn btn-primary">
-    <i class="glyphicon glyphicon-search"></i> Update Legislators
-  </button>
-<#% end %>    
- -->
-
+<h2>Search by: </h2>
  <%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :state_name_cont, "Search by State:" %>
+  <div class="field search">
+    <%= f.label :state_name_cont, "State Name:" %>
     <%= f.text_field :state_name_cont %>
   </div>
-  <div class="field">
+  <div class="field search">
     <%= f.label :first_name_cont, "First Name:" %>
     <%= f.text_field :first_name_cont %>
   </div>
-  <div class="field">
+  <div class="field search">
     <%= f.label :last_name_cont, "Last Name:" %>
     <%= f.text_field :last_name_cont %>
   </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+  <button type="submit" class="btn btn-primary search">
+    <i class="glyphicon glyphicon-search"></i>
+  </button>
 <% end %>
-
-<%= paginate @legislators %>
 
 <% @legislators.each do |legislator| %>
     <% if legislator.office? %>
@@ -40,3 +34,5 @@
     Website:      <%= legislator.website %></pre>
     <br> -->
 <% end %>
+
+<%= paginate @legislators %>
