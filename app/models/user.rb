@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     :small  => "150x150>",
     :thumb => "100x100>",
     :medium => "300x300>"}, 
-    :default_url => "/images/missing.png"
+    :default_url => "missing2.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   #validates :username, presence: true
   #validates :username, presence: true, on: :edit

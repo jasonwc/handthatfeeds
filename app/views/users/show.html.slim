@@ -1,11 +1,12 @@
-.well.row.money
+.well.row
     .col-sm-4.col-lg-3
-      h2 = @users.username
-      .pull-left
-          = image_tag( @users.avatar.url(:medium) )
+      .row
+        .pull-left
+            = image_tag( @users.avatar.url(:medium) )
    
     .col-sm-4.col-lg-6
-      .row.address
+      .row
+        h2 Your Profile:
         .pull-left
            medium
               p
@@ -13,13 +14,16 @@
                 = @users.first_name + '' + @users.last_name
 
               p
-                b Username:
+                b Username: 
                 = @users.username
               p
-                b Email:
+                b Email: 
                 = @users.email
+
+              br
+              
               p
-                = link_to 'Edit', edit_user_registration_path(@user)
+                = link_to 'Edit', edit_user_registration_path(@user), class: "btn-main"
     .col-sm-4.col-lg-3
       .row
         .pull-left

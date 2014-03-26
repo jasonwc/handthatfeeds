@@ -101,4 +101,10 @@ data_table = GoogleVisualr::DataTable.new
   current_user.follow(legislator)
   redirect_to legislator_path(legislator.crp_id)
   end
+
+  def unfollow
+    legislator = Legislator.find(params[:id])
+    current_user.stop_following(legislator)
+    redirect_to legislator_path(legislator.crp_id)
+  end
 end

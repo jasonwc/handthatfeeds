@@ -1,6 +1,6 @@
 .well.row.money
   / Picture, Name, Title, Party, State
-  .col-sm-4.col-lg-3
+  .col-sm-4.col-lg-4
     img src="http://theunitedstates.io/images/congress/225x275/#{legislator.bioguide_id}.jpg" 
     h3
       = legislator.title + '. ' + legislator.first_name + ' ' + legislator.last_name
@@ -8,10 +8,10 @@
       = legislator.chamber.capitalize + ' | ' + legislator.state_name + ' ' + legislator.party
   / Address, Phone, Facebook, Twitter, Mail, Website
 
-  .col-sm-4.col-lg-6
+  .col-sm-4.col-lg-4
     .row.address
-      h3
-        i.fa.fa-building-o
+      h5
+       
         = ' ' + legislator.office
         br Washington, D.C. 20510
     .row.phone
@@ -29,11 +29,15 @@
         i.fa.fa-globe.fa-3x
   / Mouth, Money
 
-  .col-sm-4.col-lg-3
+  .col-sm-4.col-lg-4
     / h1
       / a href="#" 
         / i.fa.fa-bullhorn Mouth
     h1
       a href=legislator_path(legislator.crp_id)
-        i.fa.fa-money Money
-    = button_to "Follow", follow_legislator_path(id: legislator.id), class: "btn"
+        i.fa.fa-money  Money
+    - if current_user
+      - if current_user.following?(legislator)
+        = button_to "Unfollow", unfollow_legislator_path(id: legislator.id), method: 'delete', class: "btn-main"
+      -else
+        = button_to "Follow", follow_legislator_path(id: legislator.id), class: "btn-main"

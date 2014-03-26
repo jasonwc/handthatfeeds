@@ -7,9 +7,9 @@ h1 Your Legislators
       small
         button.btn-main type="submit" 
           i.glyphicon.glyphicon-search
-          
-- current_user.following_legislators.each do |legislator|
-  = render '/legislators/show_legislator', legislator: legislator
+- if current_user          
+  - current_user.following_legislators.each do |legislator|
+    = render '/legislators/show_legislator', legislator: legislator
 
 h2 Senators
 = render '/legislators/show_legislator', legislator: @senior_senator

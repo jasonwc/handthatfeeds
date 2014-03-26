@@ -12,6 +12,7 @@ Handthatfeeds::Application.routes.draw do
   get "legislators/index", to: "legislators#index", as: :legislators
   get "legislators/show/:crp_id", to: "legislators#show", as: :legislator
   post "legislator/follow", to: "legislators#follow", as: :follow_legislator
+  delete "legislator/unfollow", to: "legislators#unfollow", as: :unfollow_legislator
   get "/about", to: "static_pages#about", as: :about
 
   get "/contact", to: "contact#new", as: :contact
