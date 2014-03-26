@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :first_name, :last_name, :avatar, :lunicorn
-
+  acts_as_follower
   has_attached_file :avatar
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :first_name, :last_name, :avatar
   has_attached_file :avatar, :styles => { 

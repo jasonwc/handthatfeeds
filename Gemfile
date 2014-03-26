@@ -70,4 +70,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'public_activity'
+gem "acts_as_follower", '~> 0.1.1'
+
 

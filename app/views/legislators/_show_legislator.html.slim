@@ -36,3 +36,4 @@
     h1
       a href=legislator_path(legislator.crp_id)
         i.fa.fa-money Money
+    = button_to "Follow", follow_legislator_path(id: legislator.id), class: "btn"

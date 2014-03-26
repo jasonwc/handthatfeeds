@@ -20,3 +20,10 @@
                 = @users.email
               p
                 = link_to 'Edit', edit_user_registration_path(@user)
+    .col-sm-4.col-lg-3
+      .row
+        .pull-left
+          medium
+            h2 Following:
+            - @users.following_legislators.each do |legislator|
+              p = legislator.first_name + ' ' + legislator.last_name

@@ -95,4 +95,10 @@ data_table = GoogleVisualr::DataTable.new
 
 
   end
+
+  def follow
+  legislator = Legislator.find(params[:id])
+  current_user.follow(legislator)
+  redirect_to legislator_path(legislator.crp_id)
+  end
 end
