@@ -15,7 +15,7 @@
         li= link_to "Your Legislators", your_legislators_path
         - if current_user
           li
-            = link_to current_user.username, edit_user_registration_path
+            = link_to current_user.username, user_path(current_user)
           li= link_to 'Sign Out', destroy_user_session_path, method: :delete
         - else
           li.sign-up

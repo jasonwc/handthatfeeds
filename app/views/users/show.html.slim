@@ -1,19 +1,22 @@
 .well.row.money
     .col-sm-4.col-lg-3
-      h1 Your Profile
-      .pull-right
-        small
-          p
-            b Username:
-            = @users.username
-          p
-            b Email:
-            = @users.email
-            = link_to 'Edit', edit_user_registration_path(@user)
-            | \
-            | \#{link_to 'Back', users_path}
+      h2 = @users.username
+      .pull-left
+          = image_tag( @users.avatar.url(:medium) )
+   
+    .col-sm-4.col-lg-6
+      .row.address
+        .pull-left
+           medium
+              p
+                b Name: 
+                = @users.first_name + '' + @users.last_name
 
-
-
-
-
+              p
+                b Username:
+                = @users.username
+              p
+                b Email:
+                = @users.email
+              p
+                = link_to 'Edit', edit_user_registration_path(@user)
