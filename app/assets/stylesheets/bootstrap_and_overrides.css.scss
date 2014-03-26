@@ -8,7 +8,7 @@ $well-border: #8bbf36;
 .fa-3x {
 font-size: 3em;
 color: rgb(139, 191, 54);
-padding-left: 10px;
+padding-right: 10px;
 }
 
 .fa-3x:hover{
@@ -75,7 +75,13 @@ h5 {
   color: #00000;
   text-align: left;
 }
-
+h6 {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.7px;
+  font-weight: 300;
+  color: #8bbf36;
+}
 a {
   color: inherit;
   text-decoration: none;
