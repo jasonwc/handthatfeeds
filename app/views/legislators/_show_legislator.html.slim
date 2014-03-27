@@ -40,10 +40,10 @@
     br
     - if current_user
       - if legislator.id.nil?
-      / if from the api
+        / if from the api
         - @legislator_id = Legislator.find_by_crp_id(legislator.crp_id).id
       - else
-      / from the database
+        / from the database
         - @legislator_id = legislator.id
 
       - if current_user.following?(legislator)

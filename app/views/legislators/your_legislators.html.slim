@@ -1,18 +1,25 @@
-h1 Your Legislators
-.pull-right
-  small
-    = form_tag("/your_legislators", :method => "get") do
-      = label_tag(:search, "Find your legislators:")
-      = text_field_tag(:search, "Zip Code", :onclick => 'if($(this).val()=="Zip Code"){$(this).val("");};')
+.row
+  .col-xs-6
+    h2 Your Legislators
+  .col-xs-6
+    .pull-right
       small
-        button.btn-main type="submit" 
-          i.glyphicon.glyphicon-search
-- if current_user          
-  - current_user.following_legislators.each do |legislator|
-    = render '/legislators/show_legislator', legislator: legislator
-
-h2 Senators
-= render '/legislators/show_legislator', legislator: @senior_senator
-= render '/legislators/show_legislator', legislator: @junior_senator
-h2 Representative
-= render '/legislators/show_legislator', legislator: @representative
+        = form_tag("/your_legislators", :method => "get") do
+          = label_tag(:search, "Find your legislators:")
+          = text_field_tag(:search, "Zip Code", :onclick => 'if($(this).val()=="Zip Code"){$(this).val("");};')
+          small
+            button.btn-main type="submit" 
+              i.glyphicon.glyphicon-search
+.row         
+  - if current_user          
+    - current_user.following_legislators.each do |legislator|
+      = render '/legislators/show_legislator', legislator: legislator
+- if @zip
+  h2 Senators
+  = render '/legislators/show_legislator', legislator: @senior_senator
+  = render '/legislators/show_legislator', legislator: @junior_senator
+  h2 Representative
+  = render '/legislators/show_legislator', legislator: @representative
+- else
+  - if current_user.follow_count == 0
+    h2 You are not following any legislators! Please enter a Zip Code or search by name and state on the All Legislators page.
