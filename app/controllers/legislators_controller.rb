@@ -15,7 +15,7 @@ data_table = GoogleVisualr::DataTable.new
     @junior_senator = legislators.results.detect{|f| f["state_rank"] == 'junior' }
     @senior_senator = legislators.results.detect{|f| f["state_rank"] == 'senior' }
 
-    @senior_senator_id = @senior_senator.crp_id
+    # @senior_senator_id = @senior_senator.crp_id
 
     @representative = legislators.results.detect{|f| f["chamber"] == 'house'}
   end

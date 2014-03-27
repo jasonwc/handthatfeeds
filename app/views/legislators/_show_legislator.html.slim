@@ -39,7 +39,14 @@
     br
     br
     - if current_user
+      - if legislator.id.nil?
+      / if from the api
+        - @legislator_id = Legislator.find_by_crp_id(legislator.crp_id).id
+      - else
+      / from the database
+        - @legislator_id = legislator.id
+
       - if current_user.following?(legislator)
-        = button_to "Unfollow", unfollow_legislator_path(id: legislator.id), method: 'delete', class: "btn-main"
+        = button_to "Unfollow", unfollow_legislator_path(id: @legislator_id), method: 'delete', class: "btn-main"
       -else
-        = button_to "Follow", follow_legislator_path(id: legislator.id), class: "btn-main"
+        = button_to "Follow", follow_legislator_path(id: @legislator_id), class: "btn-main"
