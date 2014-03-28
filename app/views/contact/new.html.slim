@@ -3,6 +3,7 @@
     .well
       h2.text-center Contact Us
       p We started Hand That Feeds as a project for a Ruby on Rails development bootcamp. Our original goal was to allow people to contact their legislators and track their finances. We believe that this site could me so much more and are dedicated to making it the most useful place to find information about your elected representatives. If you find problems or have an idea for a feature you'd like to see please share it with us!
+      p - The Hand That Feeds Team
       = simple_form_for(@contact, url: contact_path(@contact)) do |f|
         = f.error_notification
         = f.input :name

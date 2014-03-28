@@ -30,4 +30,5 @@
           medium
             h2 Following:
             - @users.following_legislators.each do |legislator|
-              p = legislator.first_name + ' ' + legislator.last_name
+              p = link_to legislator.first_name + ' ' + legislator.last_name, legislator_path(legislator.crp_id)
+              = button_to "Unfollow", unfollow_legislator_path(id: @legislator_id), method: 'delete', class: "btn-main"
