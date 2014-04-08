@@ -317,6 +317,7 @@ DEPENDENCIES
   paperclip
   pg
   powder
+  pry
   pry-debugger
   pry-rails
   public_activity
