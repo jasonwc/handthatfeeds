@@ -22,6 +22,8 @@ gem 'kaminari'
 
 group :production do
   gem 'rails_12factor'
+  gem 'pry-rails'
+  gem 'pry'
 end
 
 group :development do
