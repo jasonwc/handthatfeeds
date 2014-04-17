@@ -2,6 +2,7 @@ doctype html
 html lang="en" 
   head
     script src="http://www.google.com/jsapi" 
+    = analytics_init if Rails.env.production?
     meta charset="utf-8" 
       meta content="IE=edge" http-equiv="X-UA-Compatible" 
         meta content="width=device-width, initial-scale=1" name="viewport" 

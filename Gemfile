@@ -19,6 +19,7 @@ gem 'thin'
 gem 'rolify'
 gem 'ransack'
 gem 'kaminari'
+gem 'google-analytics-rails'
 
 group :production do
   gem 'rails_12factor'
