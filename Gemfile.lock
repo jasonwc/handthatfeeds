@@ -101,6 +101,7 @@ GEM
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     geocoder (1.1.9)
+    google-analytics-rails (0.0.5)
     google_visualr (2.1.9)
     guard (2.5.1)
       formatador (>= 0.2.4)
@@ -302,6 +303,7 @@ DEPENDENCIES
   congress
   devise
   font-awesome-rails
+  google-analytics-rails
   google_visualr (~> 2.1.0)
   guard
   guard-livereload
