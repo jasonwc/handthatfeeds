@@ -22,14 +22,10 @@
     .well
       .row
         h1.black Summary
-        p Total:
-        = number_to_currency(@summary['total'])
-        p Cash On Hand:
-        = number_to_currency(@summary['cash_on_hand'])
-        P Spent:
-        = number_to_currency(@summary['spent'])
-        p Debt:
-        = number_to_currency(@summary['debt'])
+        p Total: #{number_to_currency(@summary['total'])}
+        p Cash On Hand: #{number_to_currency(@summary['cash_on_hand'])}
+        P Spent: #{number_to_currency(@summary['spent'])}
+        p Debt: #{number_to_currency(@summary['debt'])}
       .row
-        = image_tag("opensecrets_databy250x88.gif")
+        = link_to image_tag('opensecrets_databy250x88.gif'), 'http://www.opensecrets.org', :target => '_blank'
 
