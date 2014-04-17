@@ -20,14 +20,16 @@
           = render_chart(@organizations_chart, 'organizations_chart')
   .col-lg-4
     .well
-      h1.black Summary
-      p Total:
-      = @summary['total']
-      p Cash On Hand:
-      = @summary['cash_on_hand']
-      P Spent:
-      = @summary['spent']
-      p Debt:
-      = @summary['debt']
-      p All data taken from the Center for Responsive Politics
+      .row
+        h1.black Summary
+        p Total:
+        = @summary['total']
+        p Cash On Hand:
+        = @summary['cash_on_hand']
+        P Spent:
+        = @summary['spent']
+        p Debt:
+        = @summary['debt']
+      .row
+        = image_tag("opensecrets_databy250x88.gif")
 

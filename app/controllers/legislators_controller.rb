@@ -53,7 +53,6 @@ data_table = GoogleVisualr::DataTable.new
 
     summary_result = JSON.parse(HTTParty.get('http://www.opensecrets.org/api/?method=candSummary&cid=' + @crp_id + '&cycle=2014&apikey=4daceaa6ff5b929ecdda3321b36caf76&output=json'))
     @summary = summary_result['response']['summary']['@attributes']
-
     # Get's top industries that donated to a candidate
     # TODO: put API key into secret file
     #      currently assumes that you want data from 2014, maybe want to make that variable?
