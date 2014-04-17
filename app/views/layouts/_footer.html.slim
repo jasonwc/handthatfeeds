@@ -1,0 +1,21 @@
+/! Bottom/Footer Section
+section#bottom
+  .container
+    .row.margin-20
+      .col-sm-4.text-center
+        p= link_to "Home", root_path
+        p= link_to "About", about_path
+        p= link_to "Our Team", team_path
+        p= link_to "Contact Us", contact_path
+      .col-sm-4.text-center
+        / p Facebook
+        / p Twitter
+        / p Google Plus
+        / p GitHub
+      .col-sm-4.text-center
+        h3 Hand That Feeds
+        p
+          a href="mailto:info@handthatfeeds.com" 
+            i.fa.fa-envelope-o
+            | info@handthatfeeds.com
+            p.white @ Copyright Hand That Feeds. All Rights Reserved.

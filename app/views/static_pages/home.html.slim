@@ -1,0 +1,46 @@
+section#header
+  = image_tag("htfheader1.png", class:"img-responsive", :class => 'container')
+  .container style=("width: 100%;") 
+    .row
+      .col-md-12
+        .container
+          .row.text-center
+            .col-sm-10.col-sm-offset-1
+              h1 Who is influencing your representatives?
+              .search
+                h3
+                  = form_tag("/your_legislators", :method => "get") do
+                    = label_tag(:search, "See your legislators:")
+                    br
+                      = text_field_tag(:search, "Zip Code", :onclick => 'if($(this).val()=="Zip Code"){$(this).val("");};')
+                      small
+                        button.btn-main type="submit" 
+                          i.glyphicon.glyphicon-search
+/! Home Content
+section#home-content
+  .container
+    .row
+      /! Section 1
+      a href="#" 
+        .col-sm-4.text-center.home-box
+          i.fa.fa-eye.fa-5x
+          h3.margin-30 Transparency
+          p We have elected a government that has admitted to collecting and archiving vast amounts of our personal information. We can at least partly return the favor by displaying financial contributions to representatives' campaigns. It's not the whole picture, but it's an important part of it.
+      /! Section 2
+      a href="#" 
+        .col-sm-4.text-center.home-box
+          i.fa.fa-clock-o.fa-5x
+          h3.margin-30 Accountability
+          p In modern American politics it is not uncommon for a government representatives to say something one week, only to directly contradict themselves the next. We've heard it so many times we're no longer surprised. To counter this collective political amnesia, we'll show you what they said, when, and if they followed through on their words.
+      /! Section 3
+      a href="#" 
+        .col-sm-4.text-center.home-box
+          i.fa.fa-bullhorn.fa-5x
+          h3.margin-30 Activism
+          p For the vast majority of Americans, politics are far-removed from the realm of every day experience. With backsliding and doublespeak common features of modern politics, its easy to become disaffected by the political status quo. Our goal is to remedy this apathy by providing relevant, easily digestable information regarding the members of our country's government.
+/! Message
+section#message
+  .container
+    .row
+      .col-md-10.col-md-offset-1.text-center
+        h4.gray Our Mission: To inform, engage and empower voters.

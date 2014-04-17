@@ -1,19 +1,33 @@
-.container.charts
+.row
   = render '/legislators/show_legislator', legislator: @legislator
-  h1 Money
-  .row.money
-    h1 Top Industries:
-  .row
-    .col-lg-6
-      / - @industries.each do |individual_industry|
-      /   = render '/legislators/show_industry', industry: individual_industry
-    #hart
-      = render_chart(@hart, 'hart')
-  .row.money
-    h1 Top Organizations:
-  .row
-    .col-lg-6
-      / - @organizations.each do |individual_organization|
-      /   = render '/legislators/show_organization', organization: individual_organization
-      #chart
-        = render_chart(@chart, 'chart')
+.row
+  .col-lg-8
+    .container.charts
+      .row.money
+        h1 Top Industries:
+      .row
+        #industries_chart
+          = render_chart(@industries_chart, 'industries_chart')
+      .row.money
+        h1 Top Sectors:
+      .row
+        #sectors_chart
+          = render_chart(@sectors_chart, 'sectors_chart')
+      .row.money
+        h1 Top Organizations:
+      .row
+        #organizations_chart
+          = render_chart(@organizations_chart, 'organizations_chart')
+  .col-lg-4
+    .well
+      h1.black Summary
+      p Total:
+      = @summary['total']
+      p Cash On Hand:
+      = @summary['cash_on_hand']
+      P Spent:
+      = @summary['spent']
+      p Debt:
+      = @summary['debt']
+      p All data taken from the Center for Responsive Politics
+
