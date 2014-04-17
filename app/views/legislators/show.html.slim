@@ -23,13 +23,13 @@
       .row
         h1.black Summary
         p Total:
-        = @summary['total']
+        = number_to_currency(@summary['total'])
         p Cash On Hand:
-        = @summary['cash_on_hand']
+        = number_to_currency(@summary['cash_on_hand'])
         P Spent:
-        = @summary['spent']
+        = number_to_currency(@summary['spent'])
         p Debt:
-        = @summary['debt']
+        = number_to_currency(@summary['debt'])
       .row
         = image_tag("opensecrets_databy250x88.gif")
 
