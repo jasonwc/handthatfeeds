@@ -7,7 +7,7 @@
    
     .col-sm-4.col-lg-6
       .row
-        h2 Your Profile:
+        h2 #{@users.first_name}'s Profile:
         .pull-left
            medium
               p
@@ -34,6 +34,10 @@
             /   p = link_to legislator.first_name + ' ' + legislator.last_name, legislator_path(legislator.crp_id)
             /   = button_to "Unfollow", unfollow_legislator_path(id: @legislator_id), method: 'delete', class: "btn-main"
 .container
-h1.black Followed Legislators:            
-- current_user.following_legislators.each do |legislator|
-  = render '/legislators/show_legislator', legislator: legislator
+h1.black Dashboard
+h1.black Followed Legislators:  
+- if @users.follow_count == 0 && current_user == @users
+  p You are not following any legislators! Go to the All Legislators page to search by state, first name, and/or last name.
+- else          
+  - @users.following_legislators.each do |legislator|
+    = render '/legislators/show_legislator', legislator: legislator
