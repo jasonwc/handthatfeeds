@@ -1,15 +1,22 @@
 source 'https://rubygems.org'
 
+# Rails 3.2.16
 gem 'rails', '3.2.16'
+
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+
+gem 'congress'
+gem 'opensecrets'
+
 gem 'cocoon'
 gem 'devise'
-gem 'font-awesome-rails'
+
 gem 'paperclip'
 gem 'pg'
 gem 'simple_form'
-gem 'congress'
-gem 'opensecrets'
+
 gem 'httparty'
 gem 'hashie'
 gem 'google_visualr', '~> 2.1.0'
@@ -36,9 +43,8 @@ group :development do
   gem 'meta_request'
   gem 'powder'
   gem 'pry-rails'
-  gem 'pry-debugger'
   gem 'rack-livereload'
-  gem 'xray-rails'  
+  gem 'xray-rails'
 end
 # Gems used only for assets and not required
 # in production environments by default.
@@ -69,5 +75,3 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem 'public_activity'
 gem "acts_as_follower", '~> 0.1.1'
-
-

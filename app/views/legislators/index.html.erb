@@ -19,10 +19,8 @@
   </button>
 <% end %>
 
-<% @legislators.each do |legislator| %>
-    <% if legislator.office? %>
-      <%= render '/legislators/show_legislator', legislator: legislator %>
-    <% end %>
+<% @brews.each do |brew| %>
+    <%= render '/legislators/show_brew', legislator: legislator %>
 <% end %>
 
 <%= paginate @legislators %>

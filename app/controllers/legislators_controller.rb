@@ -1,4 +1,4 @@
-class LegislatorsController < ApplicationController
+  class LegislatorsController < ApplicationController
 data_table = GoogleVisualr::DataTable.new
 
   def your_legislators
@@ -21,7 +21,7 @@ data_table = GoogleVisualr::DataTable.new
   def index
     @search = Legislator.search(params[:q])
     @legislators = @search.result.page(params[:page]).per(5)
-    
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -71,7 +71,7 @@ data_table = GoogleVisualr::DataTable.new
       ind_table.set_cell(index, 2, industry['@attributes']['pacs'].to_i)
       ind_table.set_cell(index, 3, industry['@attributes']['total'].to_i)
     end
-  
+
     opts   = { :width => 800, :height => 480, :title => 'Contibutions by Industry', colors: ['#8bbf36', '#5D7F24', '#2E4012'], :hAxis => { :title => 'Industry'} }
     @industries_chart = GoogleVisualr::Interactive::ColumnChart.new(ind_table, opts)
 
